@@ -53,6 +53,8 @@ var Bar = require('colorcoded-bar');
 })();
 ```
 
+  [![view on requirebin](http://requirebin.com/badge.png)](http://requirebin.com/?gist=88e975aa96d4481e0956)
+
 ## Installation
 
 ```bash
