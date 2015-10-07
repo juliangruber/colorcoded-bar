@@ -1,7 +1,9 @@
+var pink = 'rgb(255, 192, 203)';
+
 module.exports = Bar;
 
 function Bar(){
-  this._data = {};
+  this._data = [];
 }
 
 Bar.prototype.set = function(idx, color){
@@ -17,10 +19,14 @@ Bar.prototype.render = function(opts){
   var height = canvas.height = opts.height || 100;
   var width = canvas.width = opts.width || 100;
   var horizontal = opts.horizontal;
+  var data = this._data;
 
-  Object.keys(this._data).forEach(function(idx){
-    var color = self._data[idx];
-    var offset = idx / 100;
+  var slots = Array(horizontal
+    ? width
+    : height);
+  for (var i = 0; i < slots.length; i++) {
+    var offset = i / slots.length;
+    var color = data[Math.floor(offset * data.length)] || pink;
 
     var startX = horizontal
       ? Math.round(offset * width)
@@ -40,7 +46,7 @@ Bar.prototype.render = function(opts){
     ctx.lineTo(endX, endY);
     ctx.strokeStyle = color;
     ctx.stroke();
-  });
+  }
 
   return canvas;
 };
