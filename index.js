@@ -28,11 +28,11 @@ Bar.prototype.render = function(opts){
   height = canvas.height = height * ratio;
   width = canvas.width = width * ratio;
 
-  var slots = Array(horizontal
+  var length = horizontal
     ? width
-    : height);
-  for (var i = 0; i < slots.length; i++) {
-    var offset = i / slots.length;
+    : height;
+  for (var i = 0; i < length; i++) {
+    var offset = i / length;
     var color = data[Math.floor(offset * data.length)] || pink;
 
     var startX = horizontal
