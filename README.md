@@ -8,7 +8,7 @@
 ## Example
 
 ```js
-var Bar = require('colorcoded');
+var Bar = require('colorcoded-bar');
 
 var bar = new Bar();
 
