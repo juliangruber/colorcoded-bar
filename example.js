@@ -1,6 +1,8 @@
 var Bar = require('./');
 var insertCSS = require('insert-css');
 
+// Vertical bar
+
 (function(){
   var bar = new Bar();
   for (var i = 0; i < 100; i++) {
@@ -8,6 +10,8 @@ var insertCSS = require('insert-css');
   }
   document.body.appendChild(bar.render());
 })();
+
+// Horizontal bar
 
 (function(){
   var bar = new Bar();
@@ -17,6 +21,8 @@ var insertCSS = require('insert-css');
   document.body.appendChild(bar.render({ horizontal: true }));
 })();
 
+// Automatic input scaling
+
 (function(){
   var bar = new Bar();
   for (var i = 0; i < 10; i++) {
@@ -24,6 +30,8 @@ var insertCSS = require('insert-css');
   }
   document.body.appendChild(bar.render({ height: 200 }));
 })();
+
+// Pretty rainbows
 
 (function(){
   var bar = new Bar();
@@ -36,3 +44,4 @@ var insertCSS = require('insert-css');
 })();
 
 insertCSS('body { margin: 50px 100px }');
+document.title = 'colorcoded-bar';
