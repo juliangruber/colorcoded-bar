@@ -1,4 +1,5 @@
 var Bar = require('./');
+var insertCSS = require('insert-css');
 
 (function(){
   var bar = new Bar();
@@ -34,3 +35,4 @@ var Bar = require('./');
   document.body.appendChild(bar.render({ height: height }));
 })();
 
+insertCSS('body { margin: 50px 100px }');
