@@ -27,11 +27,11 @@ Bar.prototype.render = function(opts){
     var offset = idx / 100;
 
     var startX = horizontal
-      ? offset * width
+      ? Math.round(offset * width)
       : 0;
     var startY = horizontal
       ? 0
-      : offset * height;
+      : Math.round(offset * height);
     var endX = horizontal
       ? startX
       : width;
