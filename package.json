@@ -1,0 +1,14 @@
+{
+  "name": "colorcoded-bar",
+  "version": "0.0.0",
+  "description": "A colorcoded bar",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": "juliangruber/colorcoded-bar",
+  "devDependencies": {
+    "beefy": "^2.1.5",
+    "tape": "*"
+  },
+  "license": "MIT"
+}
