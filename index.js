@@ -14,12 +14,19 @@ Bar.prototype.render = function(opts){
   opts = opts || {};
 
   var self = this;
+
   var canvas = document.createElement('canvas');
   var ctx = canvas.getContext('2d');
-  var height = canvas.height = opts.height || 100;
-  var width = canvas.width = opts.width || 100;
   var horizontal = opts.horizontal;
   var data = this._data;
+
+  var ratio = window.devicePixelRatio || 1;
+  var height = opts.height || 100;
+  var width = opts.width || 100;
+  canvas.style.height = height + 'px';
+  canvas.style.width = width + 'px';
+  height = canvas.height = height * ratio;
+  width = canvas.width = width * ratio;
 
   var slots = Array(horizontal
     ? width
@@ -48,6 +55,7 @@ Bar.prototype.render = function(opts){
     ctx.stroke();
   }
 
+  ctx.scale(ratio, ratio);
   return canvas;
 };
 
