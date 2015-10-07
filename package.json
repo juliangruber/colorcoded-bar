@@ -1,6 +1,6 @@
 {
   "name": "colorcoded-bar",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A colorcoded bar",
   "scripts": {
     "test": "make test"
