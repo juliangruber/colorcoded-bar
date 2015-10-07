@@ -1,10 +1,6 @@
 module.exports = Bar;
 
 function Bar(){
-  this._canvas = document.createElement('canvas');
-  this._canvas.height = 100;
-  this._canvas.width = 100;
-  this._ctx = this._canvas.getContext('2d');
   this._data = {};
 }
 
@@ -16,10 +12,10 @@ Bar.prototype.render = function(opts){
   opts = opts || {};
 
   var self = this;
-  var canvas = this._canvas;
-  var ctx = this._ctx;
-  var height = canvas.height;
-  var width = canvas.width;
+  var canvas = document.createElement('canvas');
+  var ctx = canvas.getContext('2d');
+  var height = canvas.height = opts.height || 100;
+  var width = canvas.width = opts.width || 100;
   var horizontal = opts.horizontal;
 
   Object.keys(this._data).forEach(function(idx){
@@ -45,8 +41,7 @@ Bar.prototype.render = function(opts){
     ctx.strokeStyle = color;
     ctx.stroke();
   });
+
+  return canvas;
 };
 
-Bar.prototype.appendTo = function(el){
-  el.appendChild(this._canvas);
-};

@@ -16,8 +16,11 @@ for (var i = 0; i < 100; i++) {
   bar.set(i, 'rgba(1, 1, 1, ' + i / 100 + ')');
 }
 
-bar.appendTo(document.body);
-bar.render({ horizontal: false });
+document.body.appendChild(bar.render{
+  horizontal: false,
+  height: 300,
+  width: 50
+});
 ```
 
 ## Installation

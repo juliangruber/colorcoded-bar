@@ -1,10 +1,17 @@
 var Bar = require('./');
 
-var bar = new Bar();
+(function(){
+  var bar = new Bar();
+  for (var i = 0; i < 100; i++) {
+    bar.set(i, 'rgba(1, 1, 1, ' + i / 100 + ')');
+  }
+  document.body.appendChild(bar.render());
+})();
 
-for (var i = 0; i < 100; i++) {
-  bar.set(i, 'rgba(1, 1, 1, ' + i / 100 + ')');
-}
-
-bar.appendTo(document.body);
-bar.render();
+(function(){
+  var bar = new Bar();
+  for (var i = 0; i < 100; i++) {
+    bar.set(i, 'rgba(1, 1, 1, ' + i / 100 + ')');
+  }
+  document.body.appendChild(bar.render({ horizontal: true }));
+})();
