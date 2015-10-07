@@ -17,7 +17,7 @@ for (var i = 0; i < 100; i++) {
 }
 
 bar.appendTo(document.body);
-bar.render();
+bar.render({ horizontal: false });
 ```
 
 ## Installation
