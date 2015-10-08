@@ -15,7 +15,7 @@ Bar.prototype.render = function(opts){
 
   var self = this;
 
-  var canvas = document.createElement('canvas');
+  var canvas = opts.canvas || document.createElement('canvas');
   var ctx = canvas.getContext('2d');
   var horizontal = opts.horizontal;
   var data = this._data;

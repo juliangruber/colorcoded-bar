@@ -46,19 +46,20 @@ var insertCSS = require('insert-css');
 // Animations
 
 (function(){
-  var canvas;
+  var canvas = document.createElement('canvas');
+  document.body.appendChild(canvas);
+
   var height = 500;
   var off = 0;
+
   setInterval(function(){
-    if (canvas) document.body.removeChild(canvas);
     var bar = new Bar;
     for (var i = 0; i < height; i++) {
       var color = 'hsl(' + (Math.round(i / height * 360) + off % 360) + ', 100%, 50%)';
       off += 0.005;
       bar.set(i, color);
     }
-    canvas = bar.render({ height: height });
-    document.body.appendChild(canvas);
+    bar.render({ canvas: canvas, height: height });
   }, 10);
 })();
 
