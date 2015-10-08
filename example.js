@@ -43,5 +43,24 @@ var insertCSS = require('insert-css');
   document.body.appendChild(bar.render({ height: height }));
 })();
 
+// Animations
+
+(function(){
+  var canvas;
+  var height = 500;
+  var off = 0;
+  setInterval(function(){
+    if (canvas) document.body.removeChild(canvas);
+    var bar = new Bar;
+    for (var i = 0; i < height; i++) {
+      var color = 'hsl(' + (Math.round(i / height * 360) + off % 360) + ', 100%, 50%)';
+      off += 0.005;
+      bar.set(i, color);
+    }
+    canvas = bar.render({ height: height });
+    document.body.appendChild(canvas);
+  }, 10);
+})();
+
 insertCSS('body { margin: 50px 100px }');
 document.title = 'colorcoded-bar';
