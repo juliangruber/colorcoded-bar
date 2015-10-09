@@ -63,5 +63,15 @@ var insertCSS = require('insert-css');
   }, 10);
 })();
 
+// Holes
+
+(function(){
+  var bar = new Bar();
+  bar.set(100, '');
+  bar.set(25, 'gray');
+  bar.set(75, 'red');
+  document.body.appendChild(bar.render());
+})();
+
 insertCSS('body { margin: 50px 100px }');
 document.title = 'colorcoded-bar';

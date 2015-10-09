@@ -31,9 +31,11 @@ Bar.prototype.render = function(opts){
   var length = horizontal
     ? width
     : height;
+  var last;
   for (var i = 0; i < length; i++) {
     var offset = i / length;
-    var color = data[Math.floor(offset * data.length)] || pink;
+    var color = data[Math.floor(offset * data.length)] || last || pink;
+    last = color;
 
     var startX = horizontal
       ? Math.round(offset * width)
