@@ -61,6 +61,26 @@ var Bar = require('colorcoded-bar');
 $ npm install colorcoded-bar
 ```
 
+## API
+
+### new Bar()
+
+  Create a new colorcoded bar.
+
+### #set(idx, color)
+
+  Set `color` at `idx`, any css supported color notation will work.
+
+### #render([{ canvas, horizontal, height, width }])
+
+  Render the bar, returning a canvas.
+
+  Options:
+
+- `canvas`: use an already existing canvas
+- `horizontal`: render from left to right instead of top to bottom
+- `height` / `width`: size the canvas. default: 100
+
 ## License
 
   MIT
