@@ -9,7 +9,7 @@
   "devDependencies": {
     "beefy": "^2.1.5",
     "insert-css": "^2.0.0",
-    "tape": "*"
+    "tape": ">=4.6.3"
   },
   "license": "MIT"
 }
